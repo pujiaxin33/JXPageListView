@@ -67,7 +67,7 @@
  */
 @interface JXPageListView : UIView
 
-@property (nonatomic, assign) BOOL isNeedSyncListViewContentOffsetY;    //是否需要同步列表视图的y值。默认：NO。设置为NO时
+@property (nonatomic, assign) BOOL isSaveListViewScrollState;    //是否保存底部滚动列表视图的滚动状态，默认YES。设置为YES，表示A列表被滚动一定距离后，切换到B列表，当B列表往上滚动到最顶部的时候，再切换到A列表，A列表保存了它之前的滚动距离；设置为NO，表示A列表被滚动一定距离后，切换到B列表，当B列表往上滚动到最顶部的时候，再切换到A列表，A列表也同步被滚动到最顶部了；具体可以参考demo效果。
 
 @property (nonatomic, assign) CGFloat pinCategoryViewHeight;
 

@@ -34,14 +34,23 @@
             {
                 PageViewController *vc = [[PageViewController alloc] init];
                 vc.isNeedHeader = YES;
+                vc.isSaveListViewScrollState = YES;
                 [self.navigationController pushViewController:vc animated:YES];
             }
             break;
         case 2:
             {
                 PageViewController *vc = [[PageViewController alloc] init];
+                vc.isSaveListViewScrollState = YES;
                 [self.navigationController pushViewController:vc animated:YES];
             }
+            break;
+        case 3:
+        {
+            PageViewController *vc = [[PageViewController alloc] init];
+            vc.isSaveListViewScrollState = NO;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
             break;
         default:
             break;

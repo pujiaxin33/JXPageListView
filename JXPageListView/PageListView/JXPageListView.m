@@ -33,6 +33,8 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
 }
 
 - (void)initializeViews {
+    _isSaveListViewScrollState = YES;
+
     self.pinCategoryView = [[JXCategoryTitleView alloc] initWithFrame:CGRectZero];
     self.pinCategoryView.backgroundColor = [UIColor whiteColor];
     self.pinCategoryView.delegate = self;
@@ -135,6 +137,20 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
             self.mainTableView.contentOffset = CGPointMake(0, [self getTopContentHeight]);
         }
     }
+
+    if (!self.isSaveListViewScrollState) {
+        if (scrollView.contentOffset.y < topContentY) {
+            //mainTableView已经显示了header，listView的contentOffset需要重置
+            NSArray *listViews = [self.delegate listViewsInPageListView:self];
+            CGFloat insetTop = scrollView.contentInset.top;
+            if (@available(iOS 11.0, *)) {
+                insetTop = scrollView.adjustedContentInset.top;
+            }
+            for (UIView <JXPageListViewListDelegate>* listView in listViews) {
+                [listView listScrollView].contentOffset = CGPointMake(0, -insetTop);
+            }
+        }
+    }
 }
 
 
@@ -182,8 +198,12 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
 
     CGFloat topContentHeight = [self getTopContentHeight];
     if (self.mainTableView.contentOffset.y < topContentHeight) {
-        //mainTableView的header还没有消失，让listScrollView一直为0
-        scrollView.contentOffset = CGPointMake(0, -scrollView.contentInset.top);
+        //mainTableView的header还没有消失，让listScrollView固定
+        CGFloat insetTop = scrollView.contentInset.top;
+        if (@available(iOS 11.0, *)) {
+            insetTop = scrollView.adjustedContentInset.top;
+        }
+        scrollView.contentOffset = CGPointMake(0, -insetTop);
         scrollView.showsVerticalScrollIndicator = NO;
     }else {
         //mainTableView的header刚好消失，固定mainTableView的位置，显示listScrollView的滚动条

@@ -71,6 +71,12 @@
 		19759745214F7875005447D1 /* NormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19759744214F7875005447D1 /* NormalViewController.m */; };
 		19759748214F7A5D005447D1 /* NormalHotListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19759747214F7A5D005447D1 /* NormalHotListView.m */; };
 		1975974B214F7C28005447D1 /* NormalRecommendListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1975974A214F7C28005447D1 /* NormalRecommendListView.m */; };
+		1975974E214F8C9C005447D1 /* TestTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1975974D214F8C9C005447D1 /* TestTableView.m */; };
+		19759755214FA267005447D1 /* headerLoading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 19759750214FA267005447D1 /* headerLoading.gif */; };
+		19759756214FA267005447D1 /* hudLoading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 19759751214FA267005447D1 /* hudLoading.gif */; };
+		19759757214FA267005447D1 /* listScrollStateNoSave.gif in Resources */ = {isa = PBXBuildFile; fileRef = 19759752214FA267005447D1 /* listScrollStateNoSave.gif */; };
+		19759758214FA267005447D1 /* listScrollStateSave.gif in Resources */ = {isa = PBXBuildFile; fileRef = 19759753214FA267005447D1 /* listScrollStateSave.gif */; };
+		19759759214FA267005447D1 /* scrollInteraction.gif in Resources */ = {isa = PBXBuildFile; fileRef = 19759754214FA267005447D1 /* scrollInteraction.gif */; };
 		19D3C30E214F526000958B91 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D3C30D214F526000958B91 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
@@ -204,6 +210,13 @@
 		19759747214F7A5D005447D1 /* NormalHotListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalHotListView.m; sourceTree = "<group>"; };
 		19759749214F7C28005447D1 /* NormalRecommendListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalRecommendListView.h; sourceTree = "<group>"; };
 		1975974A214F7C28005447D1 /* NormalRecommendListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalRecommendListView.m; sourceTree = "<group>"; };
+		1975974C214F8C9C005447D1 /* TestTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTableView.h; sourceTree = "<group>"; };
+		1975974D214F8C9C005447D1 /* TestTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTableView.m; sourceTree = "<group>"; };
+		19759750214FA267005447D1 /* headerLoading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = headerLoading.gif; sourceTree = "<group>"; };
+		19759751214FA267005447D1 /* hudLoading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hudLoading.gif; sourceTree = "<group>"; };
+		19759752214FA267005447D1 /* listScrollStateNoSave.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = listScrollStateNoSave.gif; sourceTree = "<group>"; };
+		19759753214FA267005447D1 /* listScrollStateSave.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = listScrollStateSave.gif; sourceTree = "<group>"; };
+		19759754214FA267005447D1 /* scrollInteraction.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = scrollInteraction.gif; sourceTree = "<group>"; };
 		19D3C30C214F526000958B91 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		19D3C30D214F526000958B91 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,6 +251,7 @@
 		19642910214B5565009C1D31 /* JXPageListView */ = {
 			isa = PBXGroup;
 			children = (
+				1975974F214FA25B005447D1 /* Gif */,
 				19D3C30B214F525400958B91 /* HUD */,
 				1964297E214B56B5009C1D31 /* JXCategoryView */,
 				19642927214B556F009C1D31 /* PageListView */,
@@ -274,6 +288,8 @@
 				19642935214B5610009C1D31 /* MJRefresh */,
 				19642932214B55B0009C1D31 /* TestListBaseView.h */,
 				1964292F214B55AF009C1D31 /* TestListBaseView.m */,
+				1975974C214F8C9C005447D1 /* TestTableView.h */,
+				1975974D214F8C9C005447D1 /* TestTableView.m */,
 				19642928214B558A009C1D31 /* PageViewController.h */,
 				1964292A214B558A009C1D31 /* PageViewController.m */,
 				19759743214F7875005447D1 /* NormalViewController.h */,
@@ -523,6 +539,18 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		1975974F214FA25B005447D1 /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				19759750214FA267005447D1 /* headerLoading.gif */,
+				19759751214FA267005447D1 /* hudLoading.gif */,
+				19759752214FA267005447D1 /* listScrollStateNoSave.gif */,
+				19759753214FA267005447D1 /* listScrollStateSave.gif */,
+				19759754214FA267005447D1 /* scrollInteraction.gif */,
+			);
+			path = Gif;
+			sourceTree = "<group>";
+		};
 		19D3C30B214F525400958B91 /* HUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,9 +617,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19759757214FA267005447D1 /* listScrollStateNoSave.gif in Resources */,
+				19759759214FA267005447D1 /* scrollInteraction.gif in Resources */,
 				1964291E214B5567009C1D31 /* LaunchScreen.storyboard in Resources */,
 				1964291B214B5567009C1D31 /* Assets.xcassets in Resources */,
 				19642966214B5610009C1D31 /* MJRefresh.bundle in Resources */,
+				19759756214FA267005447D1 /* hudLoading.gif in Resources */,
+				19759755214FA267005447D1 /* headerLoading.gif in Resources */,
+				19759758214FA267005447D1 /* listScrollStateSave.gif in Resources */,
 				19642919214B5565009C1D31 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -614,6 +647,7 @@
 				19642976214B5610009C1D31 /* MJRefreshAutoFooter.m in Sources */,
 				196429D7214B56B5009C1D31 /* JXCategoryTitleCell.m in Sources */,
 				1964297D214B5694009C1D31 /* JXPageListMainTableView.m in Sources */,
+				1975974E214F8C9C005447D1 /* TestTableView.m in Sources */,
 				196429DB214B56B5009C1D31 /* JXCategoryImageCellModel.m in Sources */,
 				1964297C214B5694009C1D31 /* JXPageListContainerView.m in Sources */,
 				1964292D214B558A009C1D31 /* JXPageListView.m in Sources */,

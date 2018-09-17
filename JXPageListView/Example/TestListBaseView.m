@@ -9,6 +9,7 @@
 #import "TestListBaseView.h"
 #import "MJRefresh.h"
 #import "MBProgressHUD.h"
+#import "TestTableView.h"
 
 @interface TestListBaseView()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, copy) void(^scrollCallback)(UIScrollView *scrollView);
@@ -27,7 +28,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height) style:UITableViewStylePlain];
+        _tableView = [[TestTableView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height) style:UITableViewStylePlain];
         self.tableView.backgroundColor = [UIColor whiteColor];
         self.tableView.tableFooterView = [UIView new];
         self.tableView.dataSource = self;

@@ -46,7 +46,8 @@ static const CGFloat JXPageheightForHeaderInSection = 50;
 
     _listViewArray = @[powerListView, hobbyListView, partnerListView];
 
-    _pageListView = [[JXPageListView alloc] initWithDelegate:self];
+    self.pageListView = [[JXPageListView alloc] initWithDelegate:self];
+    self.pageListView.isSaveListViewScrollState = self.isSaveListViewScrollState;
     //Tips:pinCategoryViewHeight要赋值
     self.pageListView.pinCategoryViewHeight = JXPageheightForHeaderInSection;
     //Tips:操作pinCategoryView进行配置
@@ -83,7 +84,7 @@ static const CGFloat JXPageheightForHeaderInSection = 50;
 #pragma mark - UITableViewDataSource, UITableViewDelegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 2 + 1;//底部的分类滚动视图需要作为最后一个section
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

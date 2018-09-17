@@ -83,6 +83,27 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="RFk-6K-Qp2">
+                                        <rect key="frame" x="0.0" y="210" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RFk-6K-Qp2" id="35J-Q4-vpk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="列表滚动状态不保存" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBp-Gd-ChW">
+                                                    <rect key="frame" x="12" y="24.5" width="156" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LBp-Gd-ChW" firstAttribute="leading" secondItem="35J-Q4-vpk" secondAttribute="leading" constant="12" id="UbC-l4-BW7"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LBp-Gd-ChW" secondAttribute="trailing" constant="20" symbolic="YES" id="iBd-Vb-5Te"/>
+                                                <constraint firstItem="LBp-Gd-ChW" firstAttribute="centerY" secondItem="35J-Q4-vpk" secondAttribute="centerY" id="kwR-zD-SNV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
