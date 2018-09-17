@@ -11,15 +11,13 @@
 
 # 效果预览
 
-- 上下左右交互
-
-- MJRefresh刷新加载
-
-- HUD loading加载
-
-- 保存底部列表滚动状态
-
-- 不保存底部列表滚动状态
+| 说明 | GIF|
+|------|------|
+| 上下左右交互 | ![](https://github.com/pujiaxin33/JXPageListView/blob/master/JXPageListView/Gif/scrollInteraction.gif)|
+| MJRefresh刷新加载 | ![](https://github.com/pujiaxin33/JXPageListView/blob/master/JXPageListView/Gif/headerLoading.gif) |
+| HUD loading加载 | ![](https://github.com/pujiaxin33/JXPageListView/blob/master/JXPageListView/Gif/hudLoading.gif)
+| 保存底部列表滚动状态 | ![](https://github.com/pujiaxin33/JXPageListView/blob/master/JXPageListView/Gif/listScrollStateSave.gif) |
+| 不保存底部列表滚动状态 | ![](https://github.com/pujiaxin33/JXPageListView/blob/master/JXPageListView/Gif/listScrollStateNoSave.gif) |
 
 # 使用
 
