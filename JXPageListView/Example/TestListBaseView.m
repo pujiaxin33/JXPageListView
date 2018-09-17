@@ -13,7 +13,7 @@
 @interface TestListBaseView()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, copy) void(^scrollCallback)(UIScrollView *scrollView);
 @property (nonatomic, strong) NSIndexPath *lastSelectedIndexPath;
-@property (nonatomic, assign) BOOL isFirstLoaded;
+
 @end
 
 @implementation TestListBaseView
@@ -101,7 +101,7 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    self.scrollCallback(scrollView);
+    !self.scrollCallback?:self.scrollCallback(scrollView);
 }
 
 #pragma mark - JXPagingViewListViewDelegate

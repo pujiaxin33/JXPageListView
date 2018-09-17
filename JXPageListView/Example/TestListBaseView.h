@@ -14,4 +14,5 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray <NSString *> *dataSource;
 @property (nonatomic, assign) BOOL isNeedHeader;
+@property (nonatomic, assign) BOOL isFirstLoaded;
 @end

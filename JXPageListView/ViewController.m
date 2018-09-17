@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "PageViewController.h"
+#import "NormalViewController.h"
 
 @interface ViewController ()
 
@@ -22,11 +23,29 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    PageViewController *vc = [[PageViewController alloc] init];
-    if (indexPath.row == 0) {
-        vc.isNeedHeader = YES;
+    switch (indexPath.row) {
+        case 0:
+            {
+                NormalViewController *vc = [[NormalViewController alloc] init];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+            break;
+        case 1:
+            {
+                PageViewController *vc = [[PageViewController alloc] init];
+                vc.isNeedHeader = YES;
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+            break;
+        case 2:
+            {
+                PageViewController *vc = [[PageViewController alloc] init];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+            break;
+        default:
+            break;
     }
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

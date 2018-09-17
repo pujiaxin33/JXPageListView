@@ -68,6 +68,9 @@
 		196429E2214B56B5009C1D31 /* JXCategoryBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 196429C4214B56B5009C1D31 /* JXCategoryBaseView.m */; };
 		196429E3214B56B5009C1D31 /* JXCategoryBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 196429C5214B56B5009C1D31 /* JXCategoryBaseCell.m */; };
 		196429E4214B56B5009C1D31 /* JXCategoryBaseCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 196429C6214B56B5009C1D31 /* JXCategoryBaseCellModel.m */; };
+		19759745214F7875005447D1 /* NormalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19759744214F7875005447D1 /* NormalViewController.m */; };
+		19759748214F7A5D005447D1 /* NormalHotListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19759747214F7A5D005447D1 /* NormalHotListView.m */; };
+		1975974B214F7C28005447D1 /* NormalRecommendListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1975974A214F7C28005447D1 /* NormalRecommendListView.m */; };
 		19D3C30E214F526000958B91 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D3C30D214F526000958B91 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
@@ -195,6 +198,12 @@
 		196429C4214B56B5009C1D31 /* JXCategoryBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryBaseView.m; sourceTree = "<group>"; };
 		196429C5214B56B5009C1D31 /* JXCategoryBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryBaseCell.m; sourceTree = "<group>"; };
 		196429C6214B56B5009C1D31 /* JXCategoryBaseCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCategoryBaseCellModel.m; sourceTree = "<group>"; };
+		19759743214F7875005447D1 /* NormalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalViewController.h; sourceTree = "<group>"; };
+		19759744214F7875005447D1 /* NormalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalViewController.m; sourceTree = "<group>"; };
+		19759746214F7A5D005447D1 /* NormalHotListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalHotListView.h; sourceTree = "<group>"; };
+		19759747214F7A5D005447D1 /* NormalHotListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalHotListView.m; sourceTree = "<group>"; };
+		19759749214F7C28005447D1 /* NormalRecommendListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormalRecommendListView.h; sourceTree = "<group>"; };
+		1975974A214F7C28005447D1 /* NormalRecommendListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormalRecommendListView.m; sourceTree = "<group>"; };
 		19D3C30C214F526000958B91 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		19D3C30D214F526000958B91 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -267,6 +276,12 @@
 				1964292F214B55AF009C1D31 /* TestListBaseView.m */,
 				19642928214B558A009C1D31 /* PageViewController.h */,
 				1964292A214B558A009C1D31 /* PageViewController.m */,
+				19759743214F7875005447D1 /* NormalViewController.h */,
+				19759744214F7875005447D1 /* NormalViewController.m */,
+				19759746214F7A5D005447D1 /* NormalHotListView.h */,
+				19759747214F7A5D005447D1 /* NormalHotListView.m */,
+				19759749214F7C28005447D1 /* NormalRecommendListView.h */,
+				1975974A214F7C28005447D1 /* NormalRecommendListView.m */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -622,10 +637,12 @@
 				19642974214B5610009C1D31 /* MJRefreshHeader.m in Sources */,
 				19642968214B5610009C1D31 /* NSBundle+MJRefresh.m in Sources */,
 				19642967214B5610009C1D31 /* UIScrollView+MJExtension.m in Sources */,
+				19759745214F7875005447D1 /* NormalViewController.m in Sources */,
 				196429D4214B56B5009C1D31 /* JXCategoryTitleImageCell.m in Sources */,
 				1964296B214B5610009C1D31 /* MJRefreshBackStateFooter.m in Sources */,
 				1964296A214B5610009C1D31 /* MJRefreshBackGifFooter.m in Sources */,
 				19D3C30E214F526000958B91 /* MBProgressHUD.m in Sources */,
+				1975974B214F7C28005447D1 /* NormalRecommendListView.m in Sources */,
 				196429D2214B56B5009C1D31 /* JXCategoryDotCellModel.m in Sources */,
 				19642964214B5610009C1D31 /* UIScrollView+MJRefresh.m in Sources */,
 				196429D6214B56B5009C1D31 /* JXCategoryTitleCellModel.m in Sources */,
@@ -640,6 +657,7 @@
 				196429DE214B56B5009C1D31 /* JXCategoryNumberCellModel.m in Sources */,
 				1964292C214B558A009C1D31 /* PageViewController.m in Sources */,
 				196429D0214B56B5009C1D31 /* JXCategoryDotCell.m in Sources */,
+				19759748214F7A5D005447D1 /* NormalHotListView.m in Sources */,
 				196429C7214B56B5009C1D31 /* JXCategoryIndicatorLineView.m in Sources */,
 				196429CF214B56B5009C1D31 /* JXCategoryIndicatorView.m in Sources */,
 				19642933214B55B0009C1D31 /* TestListBaseView.m in Sources */,
