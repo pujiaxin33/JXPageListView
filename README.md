@@ -27,7 +27,7 @@
 self.pageListView = [[JXPageListView alloc] initWithDelegate:self];
 ```
 
-- 配置分类视图`pinCategoryView`；使用的是：[JXCategoryView](https://github.com/pujiaxin33/JXCategoryView) 目前已经1.4k stars，强烈推荐阅读！！！
+- 配置分类视图`pinCategoryView`
 
 ```
 self.pageListView.pinCategoryView.titles = self.titles;
@@ -83,6 +83,12 @@ self.pageListView.mainTableView.delegate = self;
     return self.listViewArray;
 }
 ```
+
+# JXPagingView推荐
+如果你只想找一个顶部只有少量视图（类似TableHeaderView的概念），推荐你看我的这个库：[JXPagingView](https://github.com/pujiaxin33/JXPagingView)
+
+# JXCategoryView推荐
+如果你想要支持所有主流APP分类切换效果的框架，推荐你看我的这个库，目前已经1.4k stars：[JXCategoryView](https://github.com/pujiaxin33/JXCategoryView)
 
 # 补充
 有任何疑问欢迎通过以下方式联系我：
