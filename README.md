@@ -11,15 +11,13 @@
 
 # 效果预览
 
-- 上下左右交互
-
-- MJRefresh刷新加载
-
-- HUD loading加载
-
-- 保存底部列表滚动状态
-
-- 不保存底部列表滚动状态
+| 说明 | GIF|
+|------|------|
+| 上下左右交互 | ![](https://github.com/pujiaxin33/JXPageListView/blob/master/JXPageListView/Gif/scrollInteraction.gif)|
+| MJRefresh刷新加载 | ![](https://github.com/pujiaxin33/JXPageListView/blob/master/JXPageListView/Gif/headerLoading.gif) |
+| HUD loading加载 | ![](https://github.com/pujiaxin33/JXPageListView/blob/master/JXPageListView/Gif/hudLoading.gif)
+| 保存底部列表滚动状态 | ![](https://github.com/pujiaxin33/JXPageListView/blob/master/JXPageListView/Gif/listScrollStateSave.gif) |
+| 不保存底部列表滚动状态 | ![](https://github.com/pujiaxin33/JXPageListView/blob/master/JXPageListView/Gif/listScrollStateNoSave.gif) |
 
 # 使用
 
@@ -29,7 +27,7 @@
 self.pageListView = [[JXPageListView alloc] initWithDelegate:self];
 ```
 
-- 配置分类视图`pinCategoryView`；使用的是：[JXCategoryView](https://github.com/pujiaxin33/JXCategoryView) 目前已经1.4k stars，强烈推荐阅读！！！
+- 配置分类视图`pinCategoryView`
 
 ```
 self.pageListView.pinCategoryView.titles = self.titles;
@@ -85,6 +83,12 @@ self.pageListView.mainTableView.delegate = self;
     return self.listViewArray;
 }
 ```
+
+# JXPagingView推荐
+如果你只想找一个顶部只有少量视图（类似TableHeaderView的概念），推荐你看我的这个库：[JXPagingView](https://github.com/pujiaxin33/JXPagingView)
+
+# JXCategoryView推荐
+如果你想要支持所有主流APP分类切换效果的框架，推荐你看我的这个库，目前已经1.4k stars：[JXCategoryView](https://github.com/pujiaxin33/JXCategoryView)
 
 # 补充
 有任何疑问欢迎通过以下方式联系我：
