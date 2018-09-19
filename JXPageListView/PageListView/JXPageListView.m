@@ -18,7 +18,6 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
 @property (nonatomic, strong) JXPageListContainerView *listContainerView;
 @property (nonatomic, strong) UIScrollView *currentScrollingListView;
 @property (nonatomic, strong) UITableViewCell *listContainerCell;
-@property (nonatomic, assign) BOOL isCellConfiged;
 @end
 
 @implementation JXPageListView
@@ -82,16 +81,13 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
 }
 
 - (UITableViewCell *)configListContainerCellAtIndexPath:(NSIndexPath *)indexPath {
-    if (!self.isCellConfiged) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            //触发第一个列表的下拉刷新
-            NSArray *listViews = [self.delegate listViewsInPageListView:self];
-            if (listViews.count > 0) {
-                [listViews[0] listViewLoadDataIfNeeded];
-            }
-        });
-        self.isCellConfiged = YES;
-    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        //触发第一个列表的下拉刷新
+        NSArray *listViews = [self.delegate listViewsInPageListView:self];
+        if (listViews.count > 0) {
+            [listViews[0] listViewLoadDataIfNeeded];
+        }
+    });
 
     UITableViewCell *cell = [self.mainTableView dequeueReusableCellWithIdentifier:kListContainerCellIdentifier forIndexPath:indexPath];
     self.listContainerCell = cell;
