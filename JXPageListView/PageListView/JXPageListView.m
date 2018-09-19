@@ -18,6 +18,7 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
 @property (nonatomic, strong) JXPageListContainerView *listContainerView;
 @property (nonatomic, strong) UIScrollView *currentScrollingListView;
 @property (nonatomic, strong) UITableViewCell *listContainerCell;
+@property (nonatomic, strong) NSArray *originalListViews;
 @end
 
 @implementation JXPageListView
@@ -71,9 +72,14 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
 }
 
 - (void)reloadData {
+    //先移除以前的listView
+    for (UIView *listView in self.originalListViews) {
+        [listView removeFromSuperview];
+    }
     [self configListViewDidScrollCallback];
     [self.mainTableView reloadData];
     [self.listContainerView reloadData];
+    [self.pinCategoryView reloadData];
 }
 
 - (CGFloat)getListContainerCellHeight {
@@ -154,6 +160,7 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
 
 - (void)configListViewDidScrollCallback {
     NSArray *listViews = [self.delegate listViewsInPageListView:self];
+    self.originalListViews = listViews;
     for (UIView <JXPageListViewListDelegate>* listView in listViews) {
         __weak typeof(self)weakSelf = self;
         [listView listViewDidScrollCallback:^(UIScrollView *scrollView) {
@@ -161,7 +168,6 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
         }];
     }
 }
-
 
 - (void)listViewDidSelectedAtIndex:(NSInteger)index {
     UIView<JXPageListViewListDelegate> *listContainerView = [self.delegate listViewsInPageListView:self][index];
