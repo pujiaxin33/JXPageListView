@@ -9,6 +9,7 @@
 #import "NormalRecommendListView.h"
 #import "JXCategoryView.h"
 #import "TestListBaseView.h"
+#import "UIWindow+JXSafeArea.h"
 
 @interface NormalRecommendListView()
 @property (nonatomic, strong) JXCategoryTitleView *categoryView;
@@ -21,12 +22,8 @@
 {
     self = [super init];
     if (self) {
-        CGFloat naviHeight = 64;
-        if (@available(iOS 11.0, *)) {
-            if ([UIScreen mainScreen].bounds.size.height == 812) {
-                naviHeight = [UIApplication sharedApplication].keyWindow.safeAreaInsets.top + 44;
-            }
-        }
+
+        CGFloat naviHeight = [UIApplication.sharedApplication.keyWindow jx_navigationHeight];
 
         NSUInteger count = 3;
         CGFloat categoryViewHeight = 50;

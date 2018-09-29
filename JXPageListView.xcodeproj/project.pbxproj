@@ -77,6 +77,7 @@
 		19759757214FA267005447D1 /* listScrollStateNoSave.gif in Resources */ = {isa = PBXBuildFile; fileRef = 19759752214FA267005447D1 /* listScrollStateNoSave.gif */; };
 		19759758214FA267005447D1 /* listScrollStateSave.gif in Resources */ = {isa = PBXBuildFile; fileRef = 19759753214FA267005447D1 /* listScrollStateSave.gif */; };
 		19759759214FA267005447D1 /* scrollInteraction.gif in Resources */ = {isa = PBXBuildFile; fileRef = 19759754214FA267005447D1 /* scrollInteraction.gif */; };
+		19C417D0215F1C160090E518 /* UIWindow+JXSafeArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 19C417CF215F1C160090E518 /* UIWindow+JXSafeArea.m */; };
 		19D3C30E214F526000958B91 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D3C30D214F526000958B91 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
@@ -217,6 +218,8 @@
 		19759752214FA267005447D1 /* listScrollStateNoSave.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = listScrollStateNoSave.gif; sourceTree = "<group>"; };
 		19759753214FA267005447D1 /* listScrollStateSave.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = listScrollStateSave.gif; sourceTree = "<group>"; };
 		19759754214FA267005447D1 /* scrollInteraction.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = scrollInteraction.gif; sourceTree = "<group>"; };
+		19C417CE215F1C160090E518 /* UIWindow+JXSafeArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+JXSafeArea.h"; sourceTree = "<group>"; };
+		19C417CF215F1C160090E518 /* UIWindow+JXSafeArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+JXSafeArea.m"; sourceTree = "<group>"; };
 		19D3C30C214F526000958B91 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		19D3C30D214F526000958B91 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -298,6 +301,8 @@
 				19759747214F7A5D005447D1 /* NormalHotListView.m */,
 				19759749214F7C28005447D1 /* NormalRecommendListView.h */,
 				1975974A214F7C28005447D1 /* NormalRecommendListView.m */,
+				19C417CE215F1C160090E518 /* UIWindow+JXSafeArea.h */,
+				19C417CF215F1C160090E518 /* UIWindow+JXSafeArea.m */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -665,6 +670,7 @@
 				196429D8214B56B5009C1D31 /* JXCategoryTitleView.m in Sources */,
 				196429CD214B56B5009C1D31 /* JXCategoryIndicatorCellModel.m in Sources */,
 				1964296F214B5610009C1D31 /* MJRefreshAutoNormalFooter.m in Sources */,
+				19C417D0215F1C160090E518 /* UIWindow+JXSafeArea.m in Sources */,
 				1964296D214B5610009C1D31 /* MJRefreshAutoStateFooter.m in Sources */,
 				19642921214B5567009C1D31 /* main.m in Sources */,
 				196429E3214B56B5009C1D31 /* JXCategoryBaseCell.m in Sources */,
