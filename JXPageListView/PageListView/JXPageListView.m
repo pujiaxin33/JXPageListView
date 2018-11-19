@@ -91,7 +91,7 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
         //触发第一个列表的下拉刷新
         NSArray *listViews = [self.delegate listViewsInPageListView:self];
         if (listViews.count > 0) {
-            [listViews[0] listViewLoadDataIfNeeded];
+            [listViews[self.pinCategoryView.selectedIndex] listViewLoadDataIfNeeded];
         }
     });
 
