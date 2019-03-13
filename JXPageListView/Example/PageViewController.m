@@ -48,14 +48,17 @@ static const CGFloat JXPageheightForHeaderInSection = 50;
 
     self.pageListView = [[JXPageListView alloc] initWithDelegate:self];
     self.pageListView.isSaveListViewScrollState = self.isSaveListViewScrollState;
+    self.pageListView.pinSectionHeaderVerticalOffset = self.pinSectionHeaderVerticalOffset;
     //Tips:pinCategoryViewHeight要赋值
     self.pageListView.pinCategoryViewHeight = JXPageheightForHeaderInSection;
     //Tips:操作pinCategoryView进行配置
     self.pageListView.pinCategoryView.titles = self.titles;
+
     //添加分割线，这个完全自己配置
     UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, JXPageheightForHeaderInSection - 1, self.view.bounds.size.width, 1)];
     lineView.backgroundColor = [UIColor lightGrayColor];
     [self.pageListView.pinCategoryView addSubview:lineView];
+
     //Tips:成为mainTableView dataSource和delegate的代理，像普通UITableView一样使用它
     self.pageListView.mainTableView.dataSource = self;
     self.pageListView.mainTableView.delegate = self;

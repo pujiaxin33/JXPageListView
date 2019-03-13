@@ -10,4 +10,5 @@
 @interface PageViewController : UIViewController
 @property (nonatomic, assign) BOOL isNeedHeader;
 @property (nonatomic, assign) BOOL isSaveListViewScrollState;
+@property (nonatomic, assign) CGFloat pinSectionHeaderVerticalOffset;
 @end

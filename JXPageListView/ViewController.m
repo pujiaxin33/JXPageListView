@@ -52,6 +52,14 @@
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
+        case 4:
+        {
+            PageViewController *vc = [[PageViewController alloc] init];
+            vc.isSaveListViewScrollState = YES;
+            vc.pinSectionHeaderVerticalOffset = 100;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
         default:
             break;
     }

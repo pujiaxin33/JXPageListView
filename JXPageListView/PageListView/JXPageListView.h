@@ -75,6 +75,8 @@
 
 @property (nonatomic, strong, readonly) JXPageListMainTableView *mainTableView;
 
+@property (nonatomic, assign) CGFloat pinSectionHeaderVerticalOffset; //顶部固定sectionHeader的垂直偏移量。数值越大越往下沉。
+
 - (instancetype)initWithDelegate:(id<JXPageListViewDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 
 - (instancetype)init NS_UNAVAILABLE;

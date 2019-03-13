@@ -34,6 +34,7 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
 
 - (void)initializeViews {
     _isSaveListViewScrollState = YES;
+    _pinSectionHeaderVerticalOffset = 0;
 
     self.pinCategoryView = [[JXCategoryTitleView alloc] initWithFrame:CGRectZero];
     self.pinCategoryView.backgroundColor = [UIColor whiteColor];
@@ -83,7 +84,7 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
 }
 
 - (CGFloat)getListContainerCellHeight {
-    return self.bounds.size.height;
+    return self.bounds.size.height - self.pinSectionHeaderVerticalOffset;
 }
 
 - (UITableViewCell *)configListContainerCellAtIndexPath:(NSIndexPath *)indexPath {
@@ -96,6 +97,7 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
     });
 
     UITableViewCell *cell = [self.mainTableView dequeueReusableCellWithIdentifier:kListContainerCellIdentifier forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     self.listContainerCell = cell;
     for (UIView *view in cell.contentView.subviews) {
         [view removeFromSuperview];
@@ -121,14 +123,20 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
         scrollView.bounces = YES;
     }
 
-    CGFloat topContentY = [self getTopContentHeight];
+    CGFloat topContentY = [self getMainTableViewMaxContentOffsetY];
     if (scrollView.contentOffset.y >= topContentY) {
         //当滚动的contentOffset.y大于了指定sectionHeader的y值，且还没有被添加到self.view上的时候，就需要切换superView
         if (self.pinCategoryView.superview != self) {
+            CGRect frame = self.pinCategoryView.frame;
+            frame.origin.y = self.pinSectionHeaderVerticalOffset;
+            self.pinCategoryView.frame = frame;
             [self addSubview:self.pinCategoryView];
         }
     }else if (self.pinCategoryView.superview != self.listContainerCell.contentView) {
         //当滚动的contentOffset.y小于了指定sectionHeader的y值，且还没有被添加到sectionCategoryHeaderView上的时候，就需要切换superView
+        CGRect frame = self.pinCategoryView.frame;
+        frame.origin.y = 0;
+        self.pinCategoryView.frame = frame;
         [self.listContainerCell.contentView addSubview:self.pinCategoryView];
     }
 
@@ -136,7 +144,7 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
         //用户滚动的才处理
         if (self.currentScrollingListView != nil && self.currentScrollingListView.contentOffset.y > 0) {
             //mainTableView的header已经滚动不见，开始滚动某一个listView，那么固定mainTableView的contentOffset，让其不动
-            self.mainTableView.contentOffset = CGPointMake(0, [self getTopContentHeight]);
+            self.mainTableView.contentOffset = CGPointMake(0, topContentY);
         }
     }
 
@@ -173,7 +181,7 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
     UIView<JXPageListViewListDelegate> *listContainerView = [self.delegate listViewsInPageListView:self][index];
     if ([listContainerView listScrollView].contentOffset.y > 0) {
         //当前列表视图已经滚动显示了内容
-        [self showListContainerCell];
+        [self.mainTableView setContentOffset:CGPointMake(0, [self getMainTableViewMaxContentOffsetY]) animated:YES];
     }
 }
 
@@ -182,13 +190,8 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
 
  @return 高度
  */
-- (CGFloat)getTopContentHeight {
+- (CGFloat)getMainTableViewMaxContentOffsetY {
     return self.mainTableView.contentSize.height - self.bounds.size.height;
-}
-
-- (void)showListContainerCell {
-    CGFloat maxY = [self getTopContentHeight];
-    [self.mainTableView setContentOffset:CGPointMake(0, maxY) animated:YES];
 }
 
 - (void)listViewDidScroll:(UIScrollView *)scrollView {
@@ -198,7 +201,7 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
         return;
     }
 
-    CGFloat topContentHeight = [self getTopContentHeight];
+    CGFloat topContentHeight = [self getMainTableViewMaxContentOffsetY];
     if (self.mainTableView.contentOffset.y < topContentHeight) {
         //mainTableView的header还没有消失，让listScrollView固定
         CGFloat insetTop = scrollView.contentInset.top;
