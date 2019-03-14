@@ -23,25 +23,25 @@
 
 - 初始化`pageListView`
 
-```
+```Objective-C
 self.pageListView = [[JXPageListView alloc] initWithDelegate:self];
 ```
 
 - 配置分类视图`pinCategoryView`
 
-```
+```Objective-C
 self.pageListView.pinCategoryView.titles = self.titles;
 ```
 
 - 成为mainTableView的代理，像使用普通UITableView一样使用它；
-```
+```Objective-C
 self.pageListView.mainTableView.dataSource = self;
 self.pageListView.mainTableView.delegate = self;
 ```
 
 - `UITableViewDataSource, UITableViewDelegate`代理方法实现
 
-```
+```Objective-C
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1 + “你的顶部内容section数量”;//底部的分类滚动视图需要作为最后一个section
 }
@@ -57,7 +57,7 @@ self.pageListView.mainTableView.delegate = self;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 2) {
         //Tips:最后一个section（即listContainerCell所在的section）返回listContainerCell的高度
-        return [self.pageListView getListContainerCellHeight];
+        return [self.pageListView listContainerCellHeight];
     }
      //返回你的顶部内容 cell height
 }
@@ -65,7 +65,7 @@ self.pageListView.mainTableView.delegate = self;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 2) {
         //Tips:最后一个section（即listContainerCell所在的section）配置listContainerCell
-        return [self.pageListView configListContainerCellAtIndexPath:indexPath];
+        return [self.pageListView listContainerCellForRowAtIndexPath:indexPath];
     }
    //返回你的顶部内容 cell
 }
@@ -77,7 +77,7 @@ self.pageListView.mainTableView.delegate = self;
 ```
 
 - `JXPageViewDelegate`代理方法实现
-```
+```Objective-C
 //返回底部的列表视图
 - (NSArray<UIView<JXPageListViewListDelegate> *> *)listViewsInPageListView:(JXPageListView *)pageListView {
     return self.listViewArray;
