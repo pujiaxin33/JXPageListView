@@ -33,8 +33,8 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
 }
 
 - (void)initializeViews {
-    _isSaveListViewScrollState = YES;
-    _pinSectionHeaderVerticalOffset = 0;
+    _listViewScrollStateSaveEnabled = YES;
+    _pinCategoryViewVerticalOffset = 0;
 
     self.pinCategoryView = [[JXCategoryTitleView alloc] initWithFrame:CGRectZero];
     self.pinCategoryView.backgroundColor = [UIColor whiteColor];
@@ -83,11 +83,11 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
     [self.pinCategoryView reloadData];
 }
 
-- (CGFloat)getListContainerCellHeight {
-    return self.bounds.size.height - self.pinSectionHeaderVerticalOffset;
+- (CGFloat)listContainerCellHeight {
+    return self.bounds.size.height - self.pinCategoryViewVerticalOffset;
 }
 
-- (UITableViewCell *)configListContainerCellAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)listContainerCellForRowAtIndexPath:(NSIndexPath *)indexPath {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         //触发第一个列表的下拉刷新
         NSArray *listViews = [self.delegate listViewsInPageListView:self];
@@ -123,12 +123,12 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
         scrollView.bounces = YES;
     }
 
-    CGFloat topContentY = [self getMainTableViewMaxContentOffsetY];
+    CGFloat topContentY = [self mainTableViewMaxContentOffsetY];
     if (scrollView.contentOffset.y >= topContentY) {
         //当滚动的contentOffset.y大于了指定sectionHeader的y值，且还没有被添加到self.view上的时候，就需要切换superView
         if (self.pinCategoryView.superview != self) {
             CGRect frame = self.pinCategoryView.frame;
-            frame.origin.y = self.pinSectionHeaderVerticalOffset;
+            frame.origin.y = self.pinCategoryViewVerticalOffset;
             self.pinCategoryView.frame = frame;
             [self addSubview:self.pinCategoryView];
         }
@@ -148,7 +148,7 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
         }
     }
 
-    if (!self.isSaveListViewScrollState) {
+    if (!self.isListViewScrollStateSaveEnabled) {
         if (scrollView.contentOffset.y < topContentY) {
             //mainTableView已经显示了header，listView的contentOffset需要重置
             NSArray *listViews = [self.delegate listViewsInPageListView:self];
@@ -181,16 +181,11 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
     UIView<JXPageListViewListDelegate> *listContainerView = [self.delegate listViewsInPageListView:self][index];
     if ([listContainerView listScrollView].contentOffset.y > 0) {
         //当前列表视图已经滚动显示了内容
-        [self.mainTableView setContentOffset:CGPointMake(0, [self getMainTableViewMaxContentOffsetY]) animated:YES];
+        [self.mainTableView setContentOffset:CGPointMake(0, [self mainTableViewMaxContentOffsetY]) animated:YES];
     }
 }
 
-/**
- 获取除去底部listContainerCell之外，上面所有内容的高度
-
- @return 高度
- */
-- (CGFloat)getMainTableViewMaxContentOffsetY {
+- (CGFloat)mainTableViewMaxContentOffsetY {
     return self.mainTableView.contentSize.height - self.bounds.size.height;
 }
 
@@ -201,7 +196,7 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
         return;
     }
 
-    CGFloat topContentHeight = [self getMainTableViewMaxContentOffsetY];
+    CGFloat topContentHeight = [self mainTableViewMaxContentOffsetY];
     if (self.mainTableView.contentOffset.y < topContentHeight) {
         //mainTableView的header还没有消失，让listScrollView固定
         CGFloat insetTop = scrollView.contentInset.top;

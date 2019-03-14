@@ -34,29 +34,29 @@
             {
                 PageViewController *vc = [[PageViewController alloc] init];
                 vc.isNeedHeader = YES;
-                vc.isSaveListViewScrollState = YES;
+                vc.listViewScrollStateSaveEnabled = YES;
                 [self.navigationController pushViewController:vc animated:YES];
             }
             break;
         case 2:
             {
                 PageViewController *vc = [[PageViewController alloc] init];
-                vc.isSaveListViewScrollState = YES;
+                vc.listViewScrollStateSaveEnabled = YES;
                 [self.navigationController pushViewController:vc animated:YES];
             }
             break;
         case 3:
         {
             PageViewController *vc = [[PageViewController alloc] init];
-            vc.isSaveListViewScrollState = NO;
+            vc.listViewScrollStateSaveEnabled = NO;
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
         case 4:
         {
             PageViewController *vc = [[PageViewController alloc] init];
-            vc.isSaveListViewScrollState = YES;
-            vc.pinSectionHeaderVerticalOffset = 100;
+            vc.listViewScrollStateSaveEnabled = YES;
+            vc.pinCategoryViewVerticalOffset = 100;
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;

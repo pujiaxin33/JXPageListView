@@ -47,8 +47,8 @@ static const CGFloat JXPageheightForHeaderInSection = 50;
     _listViewArray = @[powerListView, hobbyListView, partnerListView];
 
     self.pageListView = [[JXPageListView alloc] initWithDelegate:self];
-    self.pageListView.isSaveListViewScrollState = self.isSaveListViewScrollState;
-    self.pageListView.pinSectionHeaderVerticalOffset = self.pinSectionHeaderVerticalOffset;
+    self.pageListView.listViewScrollStateSaveEnabled = self.listViewScrollStateSaveEnabled;
+    self.pageListView.pinCategoryViewVerticalOffset = self.pinCategoryViewVerticalOffset;
     //Tips:pinCategoryViewHeight要赋值
     self.pageListView.pinCategoryViewHeight = JXPageheightForHeaderInSection;
     //Tips:操作pinCategoryView进行配置
@@ -104,7 +104,7 @@ static const CGFloat JXPageheightForHeaderInSection = 50;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 2) {
         //Tips:最后一个section（即listContainerCell所在的section）返回listContainerCell的高度
-        return [self.pageListView getListContainerCellHeight];
+        return [self.pageListView listContainerCellHeight];
     }
     if (indexPath.section == 0) {
         return 70;
@@ -116,9 +116,9 @@ static const CGFloat JXPageheightForHeaderInSection = 50;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 2) {
         //Tips:最后一个section（即listContainerCell所在的section）配置listContainerCell
-        return [self.pageListView configListContainerCellAtIndexPath:indexPath];
+        return [self.pageListView listContainerCellForRowAtIndexPath:indexPath];
     }
-
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     cell.textLabel.text = [NSString stringWithFormat:@"Your custom cell:%ld-%ld", (long)indexPath.section, (long)indexPath.row];
     if (indexPath.section == 0) {

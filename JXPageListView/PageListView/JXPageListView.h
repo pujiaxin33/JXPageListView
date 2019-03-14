@@ -67,15 +67,15 @@
  */
 @interface JXPageListView : UIView
 
-@property (nonatomic, assign) BOOL isSaveListViewScrollState;    //是否保存底部滚动列表视图的滚动状态，默认YES。设置为YES，表示A列表被滚动一定距离后，切换到B列表，当B列表往上滚动到最顶部的时候，再切换到A列表，A列表保存了它之前的滚动距离；设置为NO，表示A列表被滚动一定距离后，切换到B列表，当B列表往上滚动到最顶部的时候，再切换到A列表，A列表也同步被滚动到最顶部了；具体可以参考demo效果。
-
-@property (nonatomic, assign) CGFloat pinCategoryViewHeight;
-
 @property (nonatomic, strong, readonly) JXCategoryTitleView *pinCategoryView;
 
 @property (nonatomic, strong, readonly) JXPageListMainTableView *mainTableView;
 
-@property (nonatomic, assign) CGFloat pinSectionHeaderVerticalOffset; //顶部固定sectionHeader的垂直偏移量。数值越大越往下沉。
+@property (nonatomic, assign, getter=isListViewScrollStateSaveEnabled) BOOL listViewScrollStateSaveEnabled;    //是否保存底部滚动列表视图的滚动状态，默认YES。设置为YES，表示A列表被滚动一定距离后，切换到B列表，当B列表往上滚动到最顶部的时候，再切换到A列表，A列表保存了它之前的滚动距离；设置为NO，表示A列表被滚动一定距离后，切换到B列表，当B列表往上滚动到最顶部的时候，再切换到A列表，A列表也同步被滚动到最顶部了；具体可以参考demo效果。
+
+@property (nonatomic, assign) CGFloat pinCategoryViewHeight;    //顶部固定悬浮categoryView的高度
+
+@property (nonatomic, assign) CGFloat pinCategoryViewVerticalOffset; //顶部固定sectionHeader的垂直偏移量。数值越大越往下沉。
 
 - (instancetype)initWithDelegate:(id<JXPageListViewDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 
@@ -85,14 +85,18 @@
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
 
-- (CGFloat)getListContainerCellHeight;
+/**
+ 返回列表容器cell的高度
+ */
+- (CGFloat)listContainerCellHeight;
 
-- (UITableViewCell *)configListContainerCellAtIndexPath:(NSIndexPath *)indexPath;
+/**
+ 返回列表容器cell
+ */
+- (UITableViewCell *)listContainerCellForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
  mainTableView的代理方法`scrollViewDidScroll`回调时需要调用该方法
-
- @param scrollView mainTableView
  */
 - (void)mainTableViewDidScroll:(UIScrollView *)scrollView;
 
