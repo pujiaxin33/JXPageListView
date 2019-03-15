@@ -18,6 +18,7 @@
 | HUD loading加载 | ![](https://github.com/pujiaxin33/JXPageListView/blob/master/JXPageListView/Gif/hudLoading.gif)
 | 保存底部列表滚动状态 | ![](https://github.com/pujiaxin33/JXPageListView/blob/master/JXPageListView/Gif/listScrollStateSave.gif) |
 | 不保存底部列表滚动状态 | ![](https://github.com/pujiaxin33/JXPageListView/blob/master/JXPageListView/Gif/listScrollStateNoSave.gif) |
+| **JXPagingView** <br/>如果只需要HeaderView <br/>请点击查看该库[JXPagingView](https://github.com/pujiaxin33/JXPagingView) <br/>请点击查看该库[JXPagingView](https://github.com/pujiaxin33/JXPagingView) <br/>请点击查看该库[JXPagingView](https://github.com/pujiaxin33/JXPagingView) | ![Zoom](https://github.com/pujiaxin33/JXPagingView/blob/master/JXPagingView/Gif/Zoom.gif) | 
 
 # 使用
 
