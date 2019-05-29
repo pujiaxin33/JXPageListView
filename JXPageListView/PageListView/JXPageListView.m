@@ -186,7 +186,7 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
 }
 
 - (CGFloat)mainTableViewMaxContentOffsetY {
-    return self.mainTableView.contentSize.height - self.bounds.size.height;
+    return floor(self.mainTableView.contentSize.height) - self.bounds.size.height;
 }
 
 - (void)listViewDidScroll:(UIScrollView *)scrollView {

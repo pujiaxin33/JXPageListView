@@ -62,6 +62,7 @@ static const CGFloat JXPageheightForHeaderInSection = 50;
     //Tips:成为mainTableView dataSource和delegate的代理，像普通UITableView一样使用它
     self.pageListView.mainTableView.dataSource = self;
     self.pageListView.mainTableView.delegate = self;
+    self.pageListView.mainTableView.scrollsToTop = NO;
     [self.pageListView.mainTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.view addSubview:self.pageListView];
 

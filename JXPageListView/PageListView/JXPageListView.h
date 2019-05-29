@@ -86,6 +86,11 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
 
 /**
+ 通过服务器获取到数据之后，再调用reloadData方法刷新
+ */
+- (void)reloadData;
+
+/**
  返回列表容器cell的高度
  */
 - (CGFloat)listContainerCellHeight;
