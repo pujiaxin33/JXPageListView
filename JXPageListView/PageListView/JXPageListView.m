@@ -204,11 +204,9 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
             insetTop = scrollView.adjustedContentInset.top;
         }
         scrollView.contentOffset = CGPointMake(0, -insetTop);
-        scrollView.showsVerticalScrollIndicator = NO;
     }else {
         //mainTableView的header刚好消失，固定mainTableView的位置，显示listScrollView的滚动条
         self.mainTableView.contentOffset = CGPointMake(0, topContentHeight);
-        scrollView.showsVerticalScrollIndicator = YES;
     }
 }
 
