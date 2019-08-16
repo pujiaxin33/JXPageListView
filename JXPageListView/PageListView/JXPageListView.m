@@ -104,7 +104,7 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
     }
 
     self.pinCategoryView.frame = CGRectMake(0, 0, cell.contentView.bounds.size.width, self.pinCategoryViewHeight);
-    if (self.pinCategoryView.superview == nil) {
+    if (self.pinCategoryView.superview != cell.contentView) {
         //首次使用pinCategoryView的时候，把pinCategoryView添加到它上面。
         [cell.contentView addSubview:self.pinCategoryView];
     }
