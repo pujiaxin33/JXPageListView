@@ -60,6 +60,13 @@
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
+        case 5:
+        {
+            PageViewController *vc = [[PageViewController alloc] init];
+            vc.isNeedScrollToBottom = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
         default:
             break;
     }

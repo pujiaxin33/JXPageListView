@@ -67,12 +67,20 @@ static const CGFloat JXPageheightForHeaderInSection = 50;
     [self.view addSubview:self.pageListView];
 
     self.navigationController.interactivePopGestureRecognizer.enabled = (self.categoryView.selectedIndex == 0);
+
+    if (self.isNeedScrollToBottom) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"滚动到底部" style:UIBarButtonItemStylePlain target:self action:@selector(naviRightItemDidClick)];
+    }
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
 
     self.pageListView.frame = self.view.bounds;
+}
+
+- (void)naviRightItemDidClick {
+    [self.pageListView.mainTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
 #pragma mark - JXPageViewDelegate

@@ -11,4 +11,5 @@
 @property (nonatomic, assign) BOOL isNeedHeader;
 @property (nonatomic, assign) BOOL listViewScrollStateSaveEnabled;
 @property (nonatomic, assign) CGFloat pinCategoryViewVerticalOffset;
+@property (nonatomic, assign) BOOL isNeedScrollToBottom;
 @end

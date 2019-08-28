@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OPv-tM-NVp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OPv-tM-NVp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -122,6 +122,27 @@
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="duh-z9-hUG" secondAttribute="trailing" constant="20" symbolic="YES" id="5gV-QE-DB7"/>
                                                 <constraint firstItem="duh-z9-hUG" firstAttribute="leading" secondItem="DJc-f8-E8M" secondAttribute="leading" constant="12" id="axm-Ml-ztk"/>
                                                 <constraint firstItem="duh-z9-hUG" firstAttribute="centerY" secondItem="DJc-f8-E8M" secondAttribute="centerY" id="n07-dW-aoo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="Lnu-zd-xnm">
+                                        <rect key="frame" x="0.0" y="350" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lnu-zd-xnm" id="sGs-ZQ-Nrw">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击滚动到底部" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgO-p8-XHl">
+                                                    <rect key="frame" x="12" y="24.5" width="122" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="BgO-p8-XHl" firstAttribute="centerY" secondItem="sGs-ZQ-Nrw" secondAttribute="centerY" id="Q0F-3p-BGo"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BgO-p8-XHl" secondAttribute="trailing" constant="20" symbolic="YES" id="gRT-HR-i08"/>
+                                                <constraint firstItem="BgO-p8-XHl" firstAttribute="leading" secondItem="sGs-ZQ-Nrw" secondAttribute="leading" constant="12" id="iuh-Zf-DEn"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
