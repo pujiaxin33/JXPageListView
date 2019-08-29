@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JXPageListMainTableView : UITableView
+@protocol JXPageListMainTableViewGestureDelegate <NSObject>
 
+- (BOOL)mainTableViewGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer;
+
+@end
+
+@interface JXPageListMainTableView : UITableView
+@property (nonatomic, weak) id<JXPageListMainTableViewGestureDelegate> gestureDelegate;
 @end
