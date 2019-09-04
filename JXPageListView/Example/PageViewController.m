@@ -69,7 +69,9 @@ static const CGFloat JXPageheightForHeaderInSection = 50;
     self.navigationController.interactivePopGestureRecognizer.enabled = (self.categoryView.selectedIndex == 0);
 
     if (self.isNeedScrollToBottom) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"滚动到底部" style:UIBarButtonItemStylePlain target:self action:@selector(naviRightItemDidClick)];
+      UIBarButtonItem *scrollToBottomItem =  [[UIBarButtonItem alloc] initWithTitle:@"滚动到底部" style:UIBarButtonItemStylePlain target:self action:@selector(naviRightItemDidClick)];
+      UIBarButtonItem *selectBottomIndexItem =  [[UIBarButtonItem alloc] initWithTitle:@"主动切换底部" style:UIBarButtonItemStylePlain target:self action:@selector(selectBottomItemDidClick)];
+        self.navigationItem.rightBarButtonItems = @[scrollToBottomItem, selectBottomIndexItem];
     }
 }
 
@@ -81,6 +83,10 @@ static const CGFloat JXPageheightForHeaderInSection = 50;
 
 - (void)naviRightItemDidClick {
     [self.pageListView.mainTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+}
+
+- (void)selectBottomItemDidClick {
+    [self.pageListView selectPageListAtIndex:arc4random_uniform(_listViewArray.count)];
 }
 
 #pragma mark - JXPageViewDelegate

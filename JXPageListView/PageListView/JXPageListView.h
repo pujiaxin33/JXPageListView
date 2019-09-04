@@ -105,4 +105,9 @@
  */
 - (void)mainTableViewDidScroll:(UIScrollView *)scrollView;
 
+/**
+ 主动选择底部滚动列表的index
+ */
+- (void)selectPageListAtIndex:(NSInteger)index;
+
 @end

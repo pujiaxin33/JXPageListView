@@ -163,6 +163,9 @@ static NSString *const kListContainerCellIdentifier = @"jx_kListContainerCellIde
     }
 }
 
+- (void)selectPageListAtIndex:(NSInteger)index  {
+    [self.pinCategoryView selectItemAtIndex:index];
+}
 
 #pragma mark - Private
 
